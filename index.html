@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>auto_form</title>
+</head>
+
+<body>
+    <h1 class="text-center p-3 bg-dark text-light">Formulaire dynamique</h1>
+    <form class="p-5">
+        <div class="row g-2">
+            <div class="col-12 col-md-4">
+                <div class="form-group">
+                    <label for="select_module">Choisir un module :</label>
+                    <select class="form-select form-select-sm form-select-sm form-control-border border-width-2" id="select_module" onchange="change_select()" required>
+                        <option></option>
+                        <option value="1">Applications</option>
+                        <option value="2">Formations</option>
+                        <option value="3">Lexique</option>
+                        <option value="4">Liens</option>
+                        <option value="5">Procédures</option>
+                        <option value="6">Confluence</option>
+                        <option value="7">Autres</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" id="select_app" style="display: none;">
+                <div class="form-group">
+                    <label for="select_applications">Choisir un item :</label>
+                    <select class="form-select form-select-sm form-control-border border-width-1" id="select_applications" required>
+                        <option></option>
+                        <option value="1">Acoss</option>
+                        <option value="2">Redmine</option>
+                        <option value="3">Info SNP</option>
+                        <option value="4">ALM</option>
+                        <option value="5">Harmonie</option>
+                        <option value="6">SOFI</option>
+                        <option value="7">Linux</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" id="select_for" style="display: none;">
+                <div class="form-group">
+                    <label for="select_formation">Choisir un item :</label>
+                    <select class="form-select form-select-sm form-control-border border-width-1" id="select_formation" required>
+                        <option></option>
+                        <option value="1">Général</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" id="select_lex" style="display: none;">
+                <div class="form-group">
+                    <label for="select_lexique">Choisir un item :</label>
+                    <select class="form-select form-select-sm form-control-border border-width-1" id="select_lexique" required>
+                        <option></option>
+                        <option value="1">Applications</option>
+                        <option value="2">Lettre A</option>
+                        <option value="3">Lettre C</option>
+                        <option value="4">Lettre D</option>
+                        <option value="5">Lettre E</option>
+                        <option value="6">Lettre F</option>
+                        <option value="7">Lettre G</option>
+                        <option value="8">Lettre H</option>
+                        <option value="9">Lettre I</option>
+                        <option value="10">Lettre M</option>
+                        <option value="11">Lettre P</option>
+                        <option value="12">Lettre R</option>
+                        <option value="13">Lettre S</option>
+                        <option value="14">Lettre T</option>
+                        <option value="15">Lettre U</option>
+                        <option value="16">Lettre V</option>
+                        <option value="17">Lettre W</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" id="select_lie" style="display: none;">
+                <div class="form-group">
+                    <label for="select_lien">Choisir un item :</label>
+                    <select class="form-select form-select-sm form-control-border border-width-1" id="select_lien" required>
+                        <option></option>
+                        <option value="1">ALM</option>
+                        <option value="2">Confluence</option>
+                        <option value="3">SOFI</option>
+                        <option value="4">Redmine</option>
+                        <option value="5">Webmin</option>
+                        <option value="6">Fedex</option>
+                        <option value="7">Info SNP</option>
+                        <option value="8">Nagios</option>
+                        <option value="9">DiffRPM</option>
+                        <option value="10">RefSOA</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" id="select_pro" style="display: none;">
+                <div class="form-group">
+                    <label for="select_procedure">Choisir un item :</label>
+                    <select class="form-select form-select-sm form-control-border border-width-1" id="select_procedure" required>
+                        <option></option>
+                        <option value="1">Intégration</option>
+                        <option value="2">Message d'erreur</option>
+                        <option value="3">ALM</option>
+                        <option value="4">Redmine</option>
+                        <option value="5">Nagios</option>
+                        <option value="6">SOFI</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" id="select_con" style="display: none;">
+                <div class="form-group">
+                    <label for="select_confluence">Choisir un item :</label>
+                    <select class="form-select form-select-sm form-control-border border-width-1" id="select_confluence" required>
+                        <option></option>
+                        <option value="1">Général</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" id="select_aut" style="display: none;">
+                <div class="form-group">
+                    <label for="select_autre">Choisir un item :</label>
+                    <select class="form-select form-select-sm form-control-border border-width-1" id="select_autre" required>
+                        <option></option>
+                        <option value="1">Général</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="form-group">
+                    <label for="select_action">Action à effectuer :</label>
+                    <select class="form-select form-select-sm form-control-border border-width-2" id="select_action" required>
+                        <option></option>
+                        <option value="1">Ajout</option>
+                        <option value="2">Suppression</option>
+                        <option value="3">Modification</option>
+                        <option value="4">Création</option>
+                        <option value="4">Autre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="floatContenu" class="text-dark">Contenu avec un maximum d'info :</label>
+                    <textarea class="form-control form-control-border border-width-2"
+                        placeholder="Saisir le contenu de la demande. Si la catégorie Confluence est choisie, merci de saisir l'URL de la page concernée. "
+                        id="floatContenu" style="height: 150px" required></textarea>
+                </div>
+            </div>
+            <div class="col-12 d-flex gap-2 justify-content-end">
+                <button class="btn btn-danger mr-2" type="reset">Réinitialiser la demande</button>
+                <button class="btn btn-success" type="submit">Envoyer la demande</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="auto_form.js"></script>
+</body>
+
+</html>
