@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>auto_form</title>
+    <title>Formulaire dynamique</title>
 </head>
 
 <body>
     <h1 class="text-center p-3 bg-dark text-light">Formulaire dynamique</h1>
-    <form class="p-5">
+    <form class="p-3 p-md-5">
         <div class="row g-2">
             <div class="col-12 col-md-4">
                 <div class="form-group">
                     <label for="select_module">Choisir un module :</label>
-                    <select class="form-select form-select-sm form-select-sm form-control-border border-width-2" id="select_module" onchange="change_select()" required>
+                    <select class="form-select form-select-sm form-control-border border-width-2" id="select_module" onchange="change_select()" required>
                         <option></option>
                         <option value="1">Applications</option>
                         <option value="2">Formations</option>
@@ -154,6 +154,10 @@
             </div>
         </div>
     </form>
+
+    <footer class="fixed-bottom bg-white p-1 text-muted fw-light text-center">
+        <span class="m-1"><strong>Copyright &copy; 2022 </strong> Sylvain LISSY | v1.0.3</san>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="auto_form.js"></script>
